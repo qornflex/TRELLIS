@@ -25,4 +25,4 @@ set PYTHONPATH=%PY_LIB_PATH%;%PY_LIB_PATH%\matgen;%PYTHONPATH%
 cd /D "%PY_LIB_PATH%"
 call venv\Scripts\activate
 
-call python %PY_FILE% %INPUT_FILELIST%
+call python qfx/%PY_FILE% %INPUT_FILELIST%
