@@ -611,7 +611,14 @@ def generate(input_filelist):
     ]
 
     # Load a pipeline from a model folder
-    pipeline = TrellisImageTo3DPipeline.from_pretrained("models/TRELLIS-image-large")
+    
+    model_path = "./models/TRELLIS-image-large"
+
+    if not os.path.exists(model_path):
+        print(f"Can't find TRELLIS model ({model_path})")
+        return
+    
+    pipeline = TrellisImageTo3DPipeline.from_pretrained(model_path)
     pipeline.cuda()    
 
     # ---
