@@ -27,6 +27,16 @@ import utils.architecture.architecture as arch
 
 warnings.filterwarnings('ignore')
 
+# ====================================================================================================================
+
+# Cap VRAM
+total_vram = torch.cuda.get_device_properties(0).total_memory  # total VRAM in bytes
+target_vram = 12 * 1024**3  # 12GB in bytes
+fraction_vram = target_vram / total_vram
+torch.cuda.set_per_process_memory_fraction(fraction_vram, device=0)
+
+# ====================================================================================================================
+
 NORMAL_MAP_MODEL = 'matgen/utils/models/1x_NormalMapGenerator-CX-Lite_200000_G.pth'
 OTHER_MAP_MODEL = 'matgen/utils/models/1x_FrankenMapGenerator-CX-Lite_215000_G.pth'
 
@@ -34,6 +44,7 @@ DEVICE = torch.device('cuda')
 
 MATGEN_MODELS = []
 
+# ====================================================================================================================
 
 def process_matgen(img, model):
     global DEVICE
@@ -610,6 +621,9 @@ def generate(input_filelist):
 
     for file_input in inputs:
 
+        # Empty PyTorch’s CUDA cache
+        torch.cuda.empty_cache()
+
         input_name = file_input["name"]
         input_file_path = file_input["filepath"]
 
@@ -665,9 +679,6 @@ def generate(input_filelist):
         print("Finalizing Mesh: 100%")
 
         fix_mesh(output_file_path, mesh_rotation, mesh_scale, smooth_normals, smooth_normals_angle)
-
-        # Empty PyTorch’s CUDA cache
-        torch.cuda.empty_cache()
 
         # Optionally, synchronize to make sure the GPU finishes pending work
         torch.cuda.synchronize()
