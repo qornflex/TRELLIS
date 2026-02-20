@@ -399,8 +399,8 @@ FodyWeavers.xsd
 
 # Huggingface models folder
 
-models
+models/
 
 # Python VENV
 
-venv
+venv/
