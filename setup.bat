@@ -170,28 +170,28 @@ if not exist "%TRELLIS_MODELS_DIR%\" (
     mkdir "%TRELLIS_MODELS_DIR%"
 )
 
-git clone https://huggingface.co/microsoft/TRELLIS-image-large ./models/TRELLIS-image-large
+git clone https://huggingface.co/microsoft/TRELLIS-image-large ./models/microsoft/TRELLIS-image-large
 cd ./models/TRELLIS-image-large
 git config advice.detachedHead false
 git checkout 25e0d31ffbebe4b5a97464dd851910efc3002d96
 
 cd ../..
 
-git clone https://huggingface.co/microsoft/TRELLIS-text-base ./models/TRELLIS-text-base
+git clone https://huggingface.co/microsoft/TRELLIS-text-base ./models/microsoft/TRELLIS-text-base
 cd ./models/TRELLIS-text-base
 git config advice.detachedHead false
 git checkout f8e8cf00c40d53dea26b718e49169ce83cf24c67
 
 cd ../..
 
-git clone https://huggingface.co/microsoft/TRELLIS-text-large ./models/TRELLIS-text-large
+git clone https://huggingface.co/microsoft/TRELLIS-text-large ./models/microsoft/TRELLIS-text-large
 cd ./models/TRELLIS-text-large
 git config advice.detachedHead false
 git checkout 4aad9f4a110329a410974d7f41ce5333a9a1fc87
 
 cd ../..
 
-git clone https://huggingface.co/microsoft/TRELLIS-text-xlarge ./models/TRELLIS-text-xlarge
+git clone https://huggingface.co/microsoft/TRELLIS-text-xlarge ./models/microsoft/TRELLIS-text-xlarge
 cd ./models/TRELLIS-text-xlarge
 git config advice.detachedHead false
 git checkout e0b00432b8e3a8ecee0df806ab1df9f7281f2be4

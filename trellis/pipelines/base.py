@@ -25,6 +25,7 @@ class Pipeline:
         """
         import os
         import json
+        
         is_local = os.path.exists(f"{path}/pipeline.json")
 
         if is_local:
@@ -38,6 +39,10 @@ class Pipeline:
 
         _models = {}
         for k, v in args['models'].items():
+            
+            if "JeffreyXiang" in v: 
+                v = v.replace("JeffreyXiang", "./models/microsoft")
+            
             try:
                 _models[k] = models.from_pretrained(f"{path}/{v}")
             except:

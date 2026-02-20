@@ -12,7 +12,6 @@ set CUDA_DEVICE_ORDER=PCI_BUS_ID
 set CUDA_VISIBLE_DEVICES=0
 set TORCH_CUDA_ARCH_LIST=8.0;8.6+PTX
 set SPCONV_ALGO=native
-
 REM SPCONV_ALGO can be 'native' or 'auto', default is 'auto'.
 REM 'auto' is faster but will do benchmarking at the beginning.
 REM Recommended to set to 'native' if run only once.

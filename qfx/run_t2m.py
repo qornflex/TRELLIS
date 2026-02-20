@@ -611,7 +611,7 @@ def generate(input_filelist):
     ]
 
     # Load a pipeline from a model folder
-    model_path = f"./models/TRELLIS-text-{model_type}"
+    model_path = f"./models/microsoft/TRELLIS-text-{model_type}"
 
     if not os.path.exists(model_path):
         print(f"Can't find TRELLIS model ({model_path})")
