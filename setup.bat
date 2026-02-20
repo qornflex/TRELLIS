@@ -261,13 +261,6 @@ REM SPCONV
 
 pip install spconv-cu120
 
-REM VOX2SEQ
-set VOX2SEQ_EXT_DIR="%CD%\extensions\vox2seq"
-if exist %VOX2SEQ_EXT_DIR% (
-	xcopy /E /I extensions\vox2seq .\tmp\extensions\vox2seq /Y
-	pip install ./tmp/extensions/vox2seq
-)
-
 REM GRADIO
 
 pip install gradio==4.44.1 gradio_litmodel3d==0.0.1
