@@ -171,32 +171,32 @@ if not exist "%TRELLIS_MODELS_DIR%\" (
 )
 
 git clone https://huggingface.co/microsoft/TRELLIS-image-large ./models/microsoft/TRELLIS-image-large
-cd ./models/TRELLIS-image-large
+cd ./models/microsoft/TRELLIS-image-large
 git config advice.detachedHead false
 git checkout 25e0d31ffbebe4b5a97464dd851910efc3002d96
 
-cd ../..
+cd ../../..
 
 git clone https://huggingface.co/microsoft/TRELLIS-text-base ./models/microsoft/TRELLIS-text-base
-cd ./models/TRELLIS-text-base
+cd ./models/microsoft/TRELLIS-text-base
 git config advice.detachedHead false
 git checkout f8e8cf00c40d53dea26b718e49169ce83cf24c67
 
-cd ../..
+cd ../../..
 
 git clone https://huggingface.co/microsoft/TRELLIS-text-large ./models/microsoft/TRELLIS-text-large
-cd ./models/TRELLIS-text-large
+cd ./models/microsoft/TRELLIS-text-large
 git config advice.detachedHead false
 git checkout 4aad9f4a110329a410974d7f41ce5333a9a1fc87
 
-cd ../..
+cd ../../..
 
 git clone https://huggingface.co/microsoft/TRELLIS-text-xlarge ./models/microsoft/TRELLIS-text-xlarge
-cd ./models/TRELLIS-text-xlarge
+cd ./models/microsoft/TRELLIS-text-xlarge
 git config advice.detachedHead false
 git checkout e0b00432b8e3a8ecee0df806ab1df9f7281f2be4
 
-cd ../..
+cd ../../..
 
 REM -------------------------------------------------------------------------------------------------------------------
 REM VENV & PIP
@@ -223,7 +223,7 @@ pip install pillow imageio imageio-ffmpeg tqdm easydict opencv-python-headless s
 
 REM utils3d
 
-pip install -e ./tmp/extensions/utils3d
+pip install ./tmp/wheels/utils3d-0.0.2-py3-none-any.whl
 
 REM Blender
 
@@ -247,15 +247,15 @@ pip install ./tmp/wheels/kaolin-0.18.0-cp310-cp310-win_amd64.whl
 
 REM NVIDIA FRAST
 
-pip install ./tmp/extensions/nvdiffrast --no-build-isolation
+pip install ./tmp/wheels/nvdiffrast-0.4.0-cp310-cp310-win_amd64.whl
 
 REM DIFFOCTREERAST
 
-pip install ./tmp/extensions/diffoctreerast --no-build-isolation
+pip install ./tmp/wheels/diffoctreerast-0.0.0-cp310-cp310-win_amd64.whl
 
 REM MIP GAUSSIAN
 
-pip install ./tmp/extensions/mip-splatting/submodules/diff-gaussian-rasterization/ --no-build-isolation
+pip install ./tmp/wheels/diff_gaussian_rasterization-0.0.0-cp310-cp310-win_amd64.whl
 
 REM SPCONV
 
